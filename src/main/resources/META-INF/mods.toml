@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[37,)"
+license="Academic Free License v3.0"
+
+[[mods]]
+modId="remaking_everything"
+version="1.0.0"
+displayName="Remaking_Everything"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+displayURL="https://mcreator.net"
+authors="mitch, MCreator"
+
+[[dependencies.remaking_everything]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

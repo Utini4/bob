@@ -1,0 +1,59 @@
+{
+  "mod_elements": [
+    {
+      "name": "Weirdpig",
+      "type": "livingentity",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weirdpig"
+    },
+    {
+      "name": "WoodenStick",
+      "type": "tool",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_stick"
+    },
+    {
+      "name": "WoodenStickRecipe",
+      "type": "recipe",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_stick_recipe"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.remaking_everything.wooden_stick": "Wooden Stick",
+      "item.remaking_everything.weirdpig_spawn_egg": "Weirdpig Spawn Egg",
+      "entity.remaking_everything.weirdpig": "Weirdpig"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "remaking_everything",
+    "modName": "Remaking_Everything",
+    "version": "1.0.0",
+    "author": "mitch, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.17.1",
+    "modElementsPackage": "net.mcreator.remakingeverything",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100354000
+}
