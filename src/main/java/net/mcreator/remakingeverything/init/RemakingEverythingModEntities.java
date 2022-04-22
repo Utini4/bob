@@ -23,8 +23,8 @@ import java.util.ArrayList;
 public class RemakingEverythingModEntities {
 	private static final List<EntityType<?>> REGISTRY = new ArrayList<>();
 	public static final EntityType<WeirdpigEntity> WEIRDPIG = register("weirdpig",
-			EntityType.Builder.<WeirdpigEntity>of(WeirdpigEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-					.setUpdateInterval(3).setCustomClientFactory(WeirdpigEntity::new).sized(0.6f, 1.8f));
+			EntityType.Builder.<WeirdpigEntity>of(WeirdpigEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WeirdpigEntity::new).sized(0.6f, 1.8f));
 
 	private static <T extends Entity> EntityType<T> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		EntityType<T> entityType = (EntityType<T>) entityTypeBuilder.build(registryname).setRegistryName(registryname);

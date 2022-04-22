@@ -13,6 +13,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 
 import net.mcreator.remakingeverything.item.WoodenStickItem;
+import net.mcreator.remakingeverything.item.ToothpickItem;
+import net.mcreator.remakingeverything.item.StoneToothpickItem;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ public class RemakingEverythingModItems {
 			new SpawnEggItem(RemakingEverythingModEntities.WEIRDPIG, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 					.setRegistryName("weirdpig_spawn_egg"));
 	public static final Item WOODEN_STICK = register(new WoodenStickItem());
+	public static final Item TOOTHPICK = register(new ToothpickItem());
+	public static final Item STONE_TOOTHPICK = register(new StoneToothpickItem());
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

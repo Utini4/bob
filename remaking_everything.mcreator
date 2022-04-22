@@ -23,6 +23,66 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "wooden_stick_recipe"
+    },
+    {
+      "name": "Toothpick",
+      "type": "tool",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toothpick"
+    },
+    {
+      "name": "Toothpickrecipe",
+      "type": "recipe",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toothpickrecipe"
+    },
+    {
+      "name": "StoneToothpick",
+      "type": "tool",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_toothpick"
+    },
+    {
+      "name": "StoneToothpickRecipe",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_toothpick_recipe"
+    },
+    {
+      "name": "WeirdpigOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weirdpig_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -30,7 +90,9 @@
   "language_map": {
     "en_us": {
       "item.remaking_everything.wooden_stick": "Wooden Stick",
+      "item.remaking_everything.toothpick": "Toothpick",
       "item.remaking_everything.weirdpig_spawn_egg": "Weirdpig Spawn Egg",
+      "item.remaking_everything.stone_toothpick": "Toothpick",
       "entity.remaking_everything.weirdpig": "Weirdpig"
     }
   },
