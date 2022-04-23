@@ -15,6 +15,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.remakingeverything.entity.WeirdpigEntity;
+import net.mcreator.remakingeverything.entity.WeirdCowEntity;
+import net.mcreator.remakingeverything.entity.WeirdChickenEntity;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -23,8 +25,14 @@ import java.util.ArrayList;
 public class RemakingEverythingModEntities {
 	private static final List<EntityType<?>> REGISTRY = new ArrayList<>();
 	public static final EntityType<WeirdpigEntity> WEIRDPIG = register("weirdpig",
-			EntityType.Builder.<WeirdpigEntity>of(WeirdpigEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WeirdpigEntity::new).sized(0.6f, 1.8f));
+			EntityType.Builder.<WeirdpigEntity>of(WeirdpigEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(3).setCustomClientFactory(WeirdpigEntity::new).sized(0.6f, 1.8f));
+	public static final EntityType<WeirdCowEntity> WEIRD_COW = register("weird_cow",
+			EntityType.Builder.<WeirdCowEntity>of(WeirdCowEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(3).setCustomClientFactory(WeirdCowEntity::new).sized(0.6f, 1.8f));
+	public static final EntityType<WeirdChickenEntity> WEIRD_CHICKEN = register("weird_chicken",
+			EntityType.Builder.<WeirdChickenEntity>of(WeirdChickenEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WeirdChickenEntity::new).sized(0.6f, 1.8f));
 
 	private static <T extends Entity> EntityType<T> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		EntityType<T> entityType = (EntityType<T>) entityTypeBuilder.build(registryname).setRegistryName(registryname);
@@ -41,11 +49,15 @@ public class RemakingEverythingModEntities {
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			WeirdpigEntity.init();
+			WeirdCowEntity.init();
+			WeirdChickenEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(WEIRDPIG, WeirdpigEntity.createAttributes().build());
+		event.put(WEIRD_COW, WeirdCowEntity.createAttributes().build());
+		event.put(WEIRD_CHICKEN, WeirdChickenEntity.createAttributes().build());
 	}
 }

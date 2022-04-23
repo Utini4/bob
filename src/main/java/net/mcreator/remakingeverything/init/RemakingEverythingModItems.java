@@ -28,6 +28,12 @@ public class RemakingEverythingModItems {
 	public static final Item WOODEN_STICK = register(new WoodenStickItem());
 	public static final Item TOOTHPICK = register(new ToothpickItem());
 	public static final Item STONE_TOOTHPICK = register(new StoneToothpickItem());
+	public static final Item WEIRD_COW = register(
+			new SpawnEggItem(RemakingEverythingModEntities.WEIRD_COW, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+					.setRegistryName("weird_cow_spawn_egg"));
+	public static final Item WEIRD_CHICKEN = register(
+			new SpawnEggItem(RemakingEverythingModEntities.WEIRD_CHICKEN, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+					.setRegistryName("weird_chicken_spawn_egg"));
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

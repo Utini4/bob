@@ -34,17 +34,18 @@ import net.mcreator.remakingeverything.procedures.WeirdpigOnEntityTickUpdateProc
 import net.mcreator.remakingeverything.init.RemakingEverythingModEntities;
 
 @Mod.EventBusSubscriber
-public class WeirdpigEntity extends PathfinderMob {
+public class WeirdChickenEntity extends PathfinderMob {
 	@SubscribeEvent
 	public static void addLivingEntityToBiomes(BiomeLoadingEvent event) {
-		event.getSpawns().getSpawner(MobCategory.AMBIENT).add(new MobSpawnSettings.SpawnerData(RemakingEverythingModEntities.WEIRDPIG, 25, 1, 4));
+		event.getSpawns().getSpawner(MobCategory.AMBIENT)
+				.add(new MobSpawnSettings.SpawnerData(RemakingEverythingModEntities.WEIRD_CHICKEN, 25, 1, 4));
 	}
 
-	public WeirdpigEntity(FMLPlayMessages.SpawnEntity packet, Level world) {
-		this(RemakingEverythingModEntities.WEIRDPIG, world);
+	public WeirdChickenEntity(FMLPlayMessages.SpawnEntity packet, Level world) {
+		this(RemakingEverythingModEntities.WEIRD_CHICKEN, world);
 	}
 
-	public WeirdpigEntity(EntityType<WeirdpigEntity> type, Level world) {
+	public WeirdChickenEntity(EntityType<WeirdChickenEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -70,7 +71,7 @@ public class WeirdpigEntity extends PathfinderMob {
 
 	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
 		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
-		this.spawnAtLocation(new ItemStack(Items.PORKCHOP));
+		this.spawnAtLocation(new ItemStack(Items.FEATHER));
 	}
 
 	@Override
@@ -96,7 +97,7 @@ public class WeirdpigEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(RemakingEverythingModEntities.WEIRDPIG, SpawnPlacements.Type.NO_RESTRICTIONS,
+		SpawnPlacements.register(RemakingEverythingModEntities.WEIRD_CHICKEN, SpawnPlacements.Type.NO_RESTRICTIONS,
 				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
 	}
 
@@ -105,7 +106,7 @@ public class WeirdpigEntity extends PathfinderMob {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
 		builder = builder.add(Attributes.MAX_HEALTH, 10);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		return builder;
 	}
 }

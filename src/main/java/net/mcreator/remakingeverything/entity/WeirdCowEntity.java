@@ -24,27 +24,25 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 
-import net.mcreator.remakingeverything.procedures.WeirdpigOnEntityTickUpdateProcedure;
 import net.mcreator.remakingeverything.init.RemakingEverythingModEntities;
 
 @Mod.EventBusSubscriber
-public class WeirdpigEntity extends PathfinderMob {
+public class WeirdCowEntity extends PathfinderMob {
 	@SubscribeEvent
 	public static void addLivingEntityToBiomes(BiomeLoadingEvent event) {
-		event.getSpawns().getSpawner(MobCategory.AMBIENT).add(new MobSpawnSettings.SpawnerData(RemakingEverythingModEntities.WEIRDPIG, 25, 1, 4));
+		event.getSpawns().getSpawner(MobCategory.AMBIENT).add(new MobSpawnSettings.SpawnerData(RemakingEverythingModEntities.WEIRD_COW, 25, 1, 4));
 	}
 
-	public WeirdpigEntity(FMLPlayMessages.SpawnEntity packet, Level world) {
-		this(RemakingEverythingModEntities.WEIRDPIG, world);
+	public WeirdCowEntity(FMLPlayMessages.SpawnEntity packet, Level world) {
+		this(RemakingEverythingModEntities.WEIRD_COW, world);
 	}
 
-	public WeirdpigEntity(EntityType<WeirdpigEntity> type, Level world) {
+	public WeirdCowEntity(EntityType<WeirdCowEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -70,7 +68,7 @@ public class WeirdpigEntity extends PathfinderMob {
 
 	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
 		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
-		this.spawnAtLocation(new ItemStack(Items.PORKCHOP));
+		this.spawnAtLocation(new ItemStack(Items.BEEF));
 	}
 
 	@Override
@@ -83,20 +81,8 @@ public class WeirdpigEntity extends PathfinderMob {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
-	@Override
-	public void baseTick() {
-		super.baseTick();
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		Entity entity = this;
-		Level world = this.level;
-
-		WeirdpigOnEntityTickUpdateProcedure.execute(world, x, y, z);
-	}
-
 	public static void init() {
-		SpawnPlacements.register(RemakingEverythingModEntities.WEIRDPIG, SpawnPlacements.Type.NO_RESTRICTIONS,
+		SpawnPlacements.register(RemakingEverythingModEntities.WEIRD_COW, SpawnPlacements.Type.NO_RESTRICTIONS,
 				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
 	}
 
