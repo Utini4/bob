@@ -147,6 +147,46 @@
           }
         ]
       }
+    },
+    {
+      "name": "WeirdSheep",
+      "type": "livingentity",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weird_sheep"
+    },
+    {
+      "name": "WeirdSheepSpawn",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weird_sheep_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HorseSpawn",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "horse_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -155,6 +195,8 @@
     "en_us": {
       "item.remaking_everything.wooden_stick": "Wooden Stick",
       "item.remaking_everything.toothpick": "Toothpick",
+      "entity.remaking_everything.weird_sheep": "Weird Sheep",
+      "item.remaking_everything.weird_sheep_spawn_egg": "Weird Sheep Spawn Egg",
       "entity.remaking_everything.weird_cow": "Weird Cow",
       "item.remaking_everything.weirdpig_spawn_egg": "Weirdpig Spawn Egg",
       "item.remaking_everything.weird_cow_spawn_egg": "Weird Cow Spawn Egg",

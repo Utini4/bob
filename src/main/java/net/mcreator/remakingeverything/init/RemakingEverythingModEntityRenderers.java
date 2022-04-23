@@ -10,6 +10,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.remakingeverything.client.renderer.WeirdpigRenderer;
+import net.mcreator.remakingeverything.client.renderer.WeirdSheepRenderer;
 import net.mcreator.remakingeverything.client.renderer.WeirdCowRenderer;
 import net.mcreator.remakingeverything.client.renderer.WeirdChickenRenderer;
 
@@ -20,5 +21,6 @@ public class RemakingEverythingModEntityRenderers {
 		event.registerEntityRenderer(RemakingEverythingModEntities.WEIRDPIG, WeirdpigRenderer::new);
 		event.registerEntityRenderer(RemakingEverythingModEntities.WEIRD_COW, WeirdCowRenderer::new);
 		event.registerEntityRenderer(RemakingEverythingModEntities.WEIRD_CHICKEN, WeirdChickenRenderer::new);
+		event.registerEntityRenderer(RemakingEverythingModEntities.WEIRD_SHEEP, WeirdSheepRenderer::new);
 	}
 }
