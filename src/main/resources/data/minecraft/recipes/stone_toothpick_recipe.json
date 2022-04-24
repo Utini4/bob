@@ -7,13 +7,13 @@
   ],
   "key": {
     "0": {
-      "tag": "forge:stone"
+      "item": "minecraft:cobblestone"
     },
     "1": {
-      "tag": "forge:stone"
+      "item": "minecraft:cobblestone"
     },
     "2": {
-      "tag": "forge:stone"
+      "item": "minecraft:cobblestone"
     },
     "4": {
       "item": "minecraft:stick"

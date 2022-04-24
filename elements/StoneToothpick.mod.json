@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "stone_toothpick",
     "customModelName": "Normal",
-    "name": "Toothpick",
+    "name": "Stone Toothpick",
     "specialInfo": [],
     "creativeTab": {
       "value": "TOOLS"

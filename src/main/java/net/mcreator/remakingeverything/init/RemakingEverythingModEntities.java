@@ -18,6 +18,14 @@ import net.mcreator.remakingeverything.entity.WeirdpigEntity;
 import net.mcreator.remakingeverything.entity.WeirdSheepEntity;
 import net.mcreator.remakingeverything.entity.WeirdCowEntity;
 import net.mcreator.remakingeverything.entity.WeirdChickenEntity;
+import net.mcreator.remakingeverything.entity.PurpleMinionEntity;
+import net.mcreator.remakingeverything.entity.PowpowpowpowpowEntity;
+import net.mcreator.remakingeverything.entity.MinionEntity;
+import net.mcreator.remakingeverything.entity.MafiaVillagerEntity;
+import net.mcreator.remakingeverything.entity.GolemDogEntity;
+import net.mcreator.remakingeverything.entity.GhastwithsaddleEntity;
+import net.mcreator.remakingeverything.entity.AlcoholicEntity;
+import net.mcreator.remakingeverything.entity.AlcoholEntity;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -37,6 +45,31 @@ public class RemakingEverythingModEntities {
 	public static final EntityType<WeirdSheepEntity> WEIRD_SHEEP = register("weird_sheep",
 			EntityType.Builder.<WeirdSheepEntity>of(WeirdSheepEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WeirdSheepEntity::new).sized(0.1f, 0.1f));
+	public static final EntityType<MafiaVillagerEntity> MAFIA_VILLAGER = register("mafia_villager",
+			EntityType.Builder.<MafiaVillagerEntity>of(MafiaVillagerEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MafiaVillagerEntity::new).sized(0.6f, 1.8f));
+	public static final EntityType<PowpowpowpowpowEntity> POWPOWPOWPOWPOW = register("entitybulletpowpowpowpowpow",
+			EntityType.Builder.<PowpowpowpowpowEntity>of(PowpowpowpowpowEntity::new, MobCategory.MISC)
+					.setCustomClientFactory(PowpowpowpowpowEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final EntityType<GolemDogEntity> GOLEM_DOG = register("golem_dog",
+			EntityType.Builder.<GolemDogEntity>of(GolemDogEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(3).setCustomClientFactory(GolemDogEntity::new).sized(1f, 1f));
+	public static final EntityType<GhastwithsaddleEntity> GHASTWITHSADDLE = register("ghastwithsaddle",
+			EntityType.Builder.<GhastwithsaddleEntity>of(GhastwithsaddleEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GhastwithsaddleEntity::new).sized(0.6f, 1.8f));
+	public static final EntityType<MinionEntity> MINION = register("minion",
+			EntityType.Builder.<MinionEntity>of(MinionEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(3).setCustomClientFactory(MinionEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final EntityType<PurpleMinionEntity> PURPLE_MINION = register("purple_minion",
+			EntityType.Builder.<PurpleMinionEntity>of(PurpleMinionEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PurpleMinionEntity::new).sized(0.6f, 1.8f));
+	public static final EntityType<AlcoholicEntity> ALCOHOLIC = register("alcoholic",
+			EntityType.Builder.<AlcoholicEntity>of(AlcoholicEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AlcoholicEntity::new).sized(0.6f, 1.8f));
+	public static final EntityType<AlcoholEntity> ALCOHOL = register("entitybulletalcohol",
+			EntityType.Builder.<AlcoholEntity>of(AlcoholEntity::new, MobCategory.MISC).setCustomClientFactory(AlcoholEntity::new)
+					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> EntityType<T> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		EntityType<T> entityType = (EntityType<T>) entityTypeBuilder.build(registryname).setRegistryName(registryname);
@@ -56,6 +89,12 @@ public class RemakingEverythingModEntities {
 			WeirdCowEntity.init();
 			WeirdChickenEntity.init();
 			WeirdSheepEntity.init();
+			MafiaVillagerEntity.init();
+			GolemDogEntity.init();
+			GhastwithsaddleEntity.init();
+			MinionEntity.init();
+			PurpleMinionEntity.init();
+			AlcoholicEntity.init();
 		});
 	}
 
@@ -65,5 +104,11 @@ public class RemakingEverythingModEntities {
 		event.put(WEIRD_COW, WeirdCowEntity.createAttributes().build());
 		event.put(WEIRD_CHICKEN, WeirdChickenEntity.createAttributes().build());
 		event.put(WEIRD_SHEEP, WeirdSheepEntity.createAttributes().build());
+		event.put(MAFIA_VILLAGER, MafiaVillagerEntity.createAttributes().build());
+		event.put(GOLEM_DOG, GolemDogEntity.createAttributes().build());
+		event.put(GHASTWITHSADDLE, GhastwithsaddleEntity.createAttributes().build());
+		event.put(MINION, MinionEntity.createAttributes().build());
+		event.put(PURPLE_MINION, PurpleMinionEntity.createAttributes().build());
+		event.put(ALCOHOLIC, AlcoholicEntity.createAttributes().build());
 	}
 }

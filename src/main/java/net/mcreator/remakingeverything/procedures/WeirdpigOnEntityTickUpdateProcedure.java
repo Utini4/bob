@@ -36,7 +36,7 @@ public class WeirdpigOnEntityTickUpdateProcedure {
 
 				private void run() {
 					if (world instanceof Level _level && !_level.isClientSide())
-						_level.explode(null, x, y, z, 5, Explosion.BlockInteraction.DESTROY);
+						_level.explode(null, x, y, z, 1, Explosion.BlockInteraction.DESTROY);
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, 60);
